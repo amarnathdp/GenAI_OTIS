@@ -14,6 +14,8 @@ const corsOptions = {
     credentials: true,
 };
 
+app.options('*', cors())
+
 app.use(cors(corsOptions));
 
 // let corsMiddleware = function (req, res, next) {
