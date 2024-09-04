@@ -9,14 +9,14 @@ const app = express();
 
 const corsOptions = {
     origin: 'https://elaborate-maamoul-e39536.netlify.app',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type','Authorization']
+    methods: ['GET', 'POST', 'PUT', 'DELETE','OPTIONS'],
+    allowedHeaders: ['Content-Type','Authorization'],
 };
 
 app.use(cors(corsOptions));
 app.use(express.json())
 
-app.use(express.static('genai-angular'))
+// app.use(express.static('genai-angular'))
 
 const storage = multer.memoryStorage()
 
