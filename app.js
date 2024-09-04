@@ -11,6 +11,7 @@ const corsOptions = {
     origin: 'https://66d8aed98e21162578d4341b--elaborate-maamoul-e39536.netlify.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE','OPTIONS'],
     allowedHeaders: ['Content-Type','Authorization'],
+    credentials: true,
 };
 
 app.use(cors(corsOptions));
