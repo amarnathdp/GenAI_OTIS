@@ -10,6 +10,7 @@ const app = express();
 const corsOptions = {
     origin: 'https://elaborate-maamoul-e39536.netlify.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type','Authorization']
 };
 
 app.use(cors(corsOptions));
