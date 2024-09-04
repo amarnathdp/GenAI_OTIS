@@ -8,7 +8,7 @@ const port = 3000;
 const app = express();
 
 const corsOptions = {
-    origin: '*',
+    origin: 'https://elaborate-maamoul-e39536.netlify.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
 };
 
