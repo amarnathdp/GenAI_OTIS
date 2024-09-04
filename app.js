@@ -7,16 +7,26 @@ const axios = require('axios');
 const port = 3000;
 const app = express();
 
-const corsOptions = {
-    origin: 'https://66d8aed98e21162578d4341b--elaborate-maamoul-e39536.netlify.app',
-    methods: ['GET', 'POST', 'PUT', 'DELETE','OPTIONS'],
-    allowedHeaders: ['Content-Type','Authorization'],
-    credentials: true,
-};
+// const corsOptions = {
+//     origin: 'https://66d8aed98e21162578d4341b--elaborate-maamoul-e39536.netlify.app',
+//     methods: ['GET', 'POST', 'PUT', 'DELETE','OPTIONS'],
+//     allowedHeaders: ['Content-Type','Authorization'],
+//     credentials: true,
+// };
 
-app.options('*', cors())
+// app.options('*', cors())
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+
+app.use(cors({
+  origin: 'https://66d8aed98e21162578d4341b--elaborate-maamoul-e39536.netlify.app', 
+  methods: 'GET,POST,PUT,DELETE,OPTIONS',
+  allowedHeaders: 'Content-Type,Authorization',
+  credentials: true 
+}));
+
+// Handle preflight requests
+app.options('*', cors());
 
 // let corsMiddleware = function (req, res, next) {
 //     res.header("Access-Control-Allow-Origin", "https://elaborate-maamoul-e39536.netlify.app/");
