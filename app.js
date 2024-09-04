@@ -15,7 +15,7 @@ const app = express();
 // };
 
 // app.options('*', cors())
-
+app.options('*', cors());
 // app.use(cors(corsOptions));
 
 app.use(cors({
@@ -26,7 +26,7 @@ app.use(cors({
 }));
 
 // Handle preflight requests
-app.options('*', cors());
+
 
 // let corsMiddleware = function (req, res, next) {
 //     res.header("Access-Control-Allow-Origin", "https://elaborate-maamoul-e39536.netlify.app/");
