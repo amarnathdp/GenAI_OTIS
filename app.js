@@ -7,21 +7,21 @@ const axios = require('axios');
 const port = 3000;
 const app = express();
 
-// const corsOptions = {
-//     origin: 'https://elaborate-maamoul-e39536.netlify.app',
-//     methods: ['GET', 'POST', 'PUT', 'DELETE','OPTIONS'],
-//     allowedHeaders: ['Content-Type','Authorization'],
-// };
+const corsOptions = {
+    origin: 'https://66d8aed98e21162578d4341b--elaborate-maamoul-e39536.netlify.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE','OPTIONS'],
+    allowedHeaders: ['Content-Type','Authorization'],
+};
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
-let corsMiddleware = function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "https://elaborate-maamoul-e39536.netlify.app/");
-    res.header('Access-Control-Allow-Methods', 'GET', 'POST', 'PUT', 'DELETE','OPTIONS');
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-    next();
-}
-app.use(corsMiddleware)
+// let corsMiddleware = function (req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "https://elaborate-maamoul-e39536.netlify.app/");
+//     res.header('Access-Control-Allow-Methods', 'GET', 'POST', 'PUT', 'DELETE','OPTIONS');
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+//     next();
+// }
+// app.use(corsMiddleware)
 app.use(express.json())
 
 // app.use(express.static('genai-angular'))
