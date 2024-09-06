@@ -53,7 +53,7 @@ const storage = multer.memoryStorage()
 
 const upload = multer({ storage: storage })
 
-const genAI = new GoogleGenerativeAI("AIzaSyD74poe46N6JeHJvFvAaKbtnI-C_8ZsKfE");
+const genAI = new GoogleGenerativeAI("AIzaSyC3jQqySQaR_tqDk5WuHAaF6zfsm7HJ90g");
 
 // AIzaSyD74poe46N6JeHJvFvAaKbtnI-C_8ZsKfE
 
