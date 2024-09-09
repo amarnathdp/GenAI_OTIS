@@ -1,4 +1,4 @@
-const { GoogleGenerativeAI } = require("@google/generative-ai");
+const { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } = require("@google/generative-ai");
 const pdfParse = require('pdf-parse');
 const express = require('express');
 const multer = require('multer');
@@ -79,7 +79,29 @@ async function run(fileData) {
         "postal_code_of_job_location": "job location postal code"
     }
 
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+  const safetySettings = [
+    {
+      category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+      threshold: HarmBlockThreshold.BLOCK_NONE,
+    },
+    {
+      category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+      threshold: HarmBlockThreshold.BLOCK_NONE,
+    },
+    {
+      category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+      threshold: HarmBlockThreshold.BLOCK_NONE,
+    },
+    {
+      category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+      threshold: HarmBlockThreshold.BLOCK_NONE,
+    }
+  ];
+  
+
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash", safetySettings: safetySettings });
+
+    // const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     const prompt = `Extract owner name, owner abbreviation, owner address line1, owner city, owner state, owner postal code, payment days, name of job location, address line 1 of job location, city of job location, state of job location and postal code of job location from the following text :${textData};and present the data in key value pairs seperated by comma in a single line and encapsulate each key and value in double inverted commas only; and the response should look like this : ${requestString}; all keys should be in smallcase and key names should be exactly same as shown in ${requestString} and key names should not have spaces in between but underscores like this :${requestString}; just give the relevant data no additional comments needed`
     // const prompt = `Extract the owner name and its abbreviation from ${textData}; encapsulate the values with double inverted commas and present them between [] seperated by comma; and the response should look like this: ${requestArray};`
     const result = await model.generateContent(prompt);
