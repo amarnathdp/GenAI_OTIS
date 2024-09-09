@@ -110,7 +110,8 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 
     } catch (error) {
         console.error(error);
-        res.status(500).send('Error processing the PDF');
+        // res.status(500).send('Error processing the PDF');
+        res.send(error)
     }
 
 });
