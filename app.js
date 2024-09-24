@@ -369,8 +369,8 @@ app.post("/api/v1/jde/contract", async (req, res) => {
 
         let body_SERVICEEQUIPMENTCREATE = {
           Site_Number: SERVICECONTRACTCREATIO_2_SITE.data.jde_customer_number,
-          Acquired_Date: "09/23/2024",
-          Installation_Date: "09/23/2024",
+          Acquired_Date: "07/01/2024",
+          Installation_Date: "07/01/2024",
           Description: reqBody.Equipment_Description.slice(0,30),
           // P1701_Version: " ",
           Unit_Number: reqBody.Equipment_Unit,
