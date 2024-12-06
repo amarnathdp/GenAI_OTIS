@@ -43,7 +43,7 @@ app.use(express.json());
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-const genAI = new GoogleGenerativeAI("AIzaSyC3jQqySQaR_tqDk5WuHAaF6zfsm7HJ90g");
+const genAI = new GoogleGenerativeAI("AIzaSyB7cso3nlsgMle3XiGblpBDtrWQZMlFK8K");
 
 // AIzaSyD74poe46N6JeHJvFvAaKbtnI-C_8ZsKfE
 
@@ -168,7 +168,7 @@ async function run(fileData) {
   ];
 
   const model = genAI.getGenerativeModel({
-    model: "gemini-1.0-pro",
+    model: "gemini-1.5-flash"
     safetySettings: safetySettings,
   });
   // const model = genAI.getGenerativeModel({ model: "gemini-pro" });
