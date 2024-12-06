@@ -43,7 +43,7 @@ app.use(express.json());
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-const genAI = new GoogleGenerativeAI("AIzaSyB7cso3nlsgMle3XiGblpBDtrWQZMlFK8K");
+const genAI = new GoogleGenerativeAI("AIzaSyB7cso3n1sgMle3XiGblpBDtrWQZM1FK8k");
 
 // AIzaSyD74poe46N6JeHJvFvAaKbtnI-C_8ZsKfE
 
