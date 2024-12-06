@@ -168,7 +168,7 @@ async function run(fileData) {
   ];
 
   const model = genAI.getGenerativeModel({
-    model: "gemini-1.5-pro",
+    model: "gemini-1.0-pro",
     safetySettings: safetySettings,
   });
   // const model = genAI.getGenerativeModel({ model: "gemini-pro" });
