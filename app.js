@@ -274,7 +274,7 @@ app.post("/api/v1/jde/contract", async (req, res) => {
 
   try {
     let userId = "vinita.modi@ltimindtree.com";
-    let pwd = "Jan_2025#OIC";
+    let pwd = "Jan_2026#OIC";
     const base64Str = btoa(userId + ":" + pwd);
     let url =
       "https://ltim-oracle-oic-bmycycq9gyza-bo.integration.ocp.oraclecloud.com:443/ic/api/integration/v1/flows/rest/GENAI_JDE_SERVICECONTRACTCREATIO/1.0/";
